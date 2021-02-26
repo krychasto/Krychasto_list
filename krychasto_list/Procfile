@@ -1,0 +1,1 @@
+    web: gunicorn krychasto_list.wsgi
