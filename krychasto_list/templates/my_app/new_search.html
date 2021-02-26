@@ -1,60 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2 style="text-align: center"> {{ search | title }} </h2>
 
-    <div class="row">
+    <h2 style="text-align: center"> {{ search | title }} </h2>
+<div class="row">
+    {% for post in final_postings %}
         <div class="col s4">
             <div class="card">
                 <div class="card-image">
-                    <a href="/"><img src="http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcRaKjESxA3RHx0zdmdljgJG7LzPDBPPyxvMR873mo2Tf9Q-mC1J5ieJ6WlY4u3WKNMGmve_ouORoj4NM-asaMs" alt=""></a>
+                    <a href={{ post.1 }}><img src="http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcRaKjESxA3RHx0zdmdljgJG7LzPDBPPyxvMR873mo2Tf9Q-mC1J5ieJ6WlY4u3WKNMGmve_ouORoj4NM-asaMs" alt=""></a>
                 </div>
                 <div class="card-content">
-                    <p>TEST</p>
+                    <p>{{ post.0 }}</p>
                 </div>
                 <div class="card-action">
-                    <a href="/">View listing: Price TEST PRICE </a>
+                    <a href={{ post.1 }}>View listing: Price {{ post.2 }} </a>
                 </div>
             </div>
         </div>
-        <div class="col s4">
-            <div class="card">
-                <div class="card-image">
-                    <a href="/"><img src="http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcRaKjESxA3RHx0zdmdljgJG7LzPDBPPyxvMR873mo2Tf9Q-mC1J5ieJ6WlY4u3WKNMGmve_ouORoj4NM-asaMs" alt=""></a>
-                </div>
-                <div class="card-content">
-                    <p>TEST</p>
-                </div>
-                <div class="card-action">
-                    <a href="/">View listing: Price TEST PRICE </a>
-                </div>
-            </div>
-        </div>
-        <div class="col s4">
-            <div class="card">
-                <div class="card-image">
-                    <a href="/"><img src="http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcRaKjESxA3RHx0zdmdljgJG7LzPDBPPyxvMR873mo2Tf9Q-mC1J5ieJ6WlY4u3WKNMGmve_ouORoj4NM-asaMs" alt=""></a>
-                </div>
-                <div class="card-content">
-                    <p>TEST</p>
-                </div>
-                <div class="card-action">
-                    <a href="/">View listing: Price TEST PRICE </a>
-                </div>
-            </div>
-        </div>
-        <div class="col s4">
-            <div class="card">
-                <div class="card-image">
-                    <a href="/"><img src="http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcRaKjESxA3RHx0zdmdljgJG7LzPDBPPyxvMR873mo2Tf9Q-mC1J5ieJ6WlY4u3WKNMGmve_ouORoj4NM-asaMs" alt=""></a>
-                </div>
-                <div class="card-content">
-                    <p>TEST</p>
-                </div>
-                <div class="card-action">
-                    <a href="/">View listing: Price TEST PRICE </a>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% endfor %}
+</div>
+
 {% endblock content %}
