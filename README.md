@@ -1,1 +1,2 @@
-# Krychasto_list
+# This is craigslist clone.
+
